@@ -1,0 +1,15 @@
+#Begin program.
+if 1:
+	a = input("Please enter your password: ")
+	if a != "opportunity":
+		a = input("Please enter your password: ")
+		b = 0
+		while b < 3:
+			a = input("Please enter your password: ")
+			b = b + 1
+			if b == 2:
+				pquery1 = input("Do you need to reset your password? ")
+				if pquery1 == "yes":
+				      print("OK!")
+				elif pquery1 == "no":
+				      print("OK!")
