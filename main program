@@ -21,7 +21,7 @@ if 1:
 	if a != "opportunity":
 		a = input("Please enter your password: ")
 		b = 0
-		while b < 3:
+		while b < 2:
 			a = input("Please enter your password: ")
 			b = b + 1
 			if b == 2:
