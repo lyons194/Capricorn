@@ -1,22 +1,4 @@
-#Begin program.
-if 1:
-	a = input("Please enter your password: ")
-	if a != "opportunity":
-		a = input("Please enter your password: ")
-		b = 0
-		while b < 3:
-			a = input("Please enter your password: ")
-			b = b + 1
-			if b == 2:
-				pquery1 = input("Do you need to reset your password? ")
-				if pquery1 == "yes":
-				      print("OK!")
-				elif pquery1 == "no":
-				      print("OK!")
-
-#Update made to program: 8-26-2018.
-
-if 1:
+while 1:
 	a = input("Please enter your password: ")
 	if a != "opportunity":
 		a = input("Please enter your password: ")
@@ -26,14 +8,23 @@ if 1:
 			b = b + 1
 			if b == 2:
 				pquery1 = input("Do you need to reset your password? ")
-				if pquery1 == "yes":
-				      print("OK!")
+				while pquery1 == "yes":
 				      pquery2 = input("Please enter your new password: ")
-				      print(pquery2)
 				      pquery3 = input("Please re-enter your new password: ")
-				      while pquery3 != pquery2:
+				      if pquery3 == pquery2:
+					      a = input("Please enter your password: ")
+					      if a == pquery3:
+						      break
+					      if a != pquery3:
+						      print("oh man")
+				      if pquery3 != pquery2:
 					      pquery3 = input("Please re-enter your new password: ")
 					      if pquery3 == pquery2:
 						      break
-				elif pquery1 == "no":
+				if pquery1 == "no":
 				      print("OK!")
+				      break
+	if a == "opportunity":
+		break
+	if a == pquery3:
+		break
