@@ -16,7 +16,98 @@ while 1:
 					      if a == pquery3:
 						      break
 					      if a != pquery3:
-						      print("oh man")
+						      print("Passwords do not match.  Please reset your password.")
+				      if pquery3 != pquery2:
+					      pquery3 = input("Please re-enter your new password: ")
+					      if pquery3 == pquery2:
+						      break
+				while pquery1 == "Yes":
+				      pquery2 = input("Please enter your new password: ")
+				      pquery3 = input("Please re-enter your new password: ")
+				      if pquery3 == pquery2:
+					      a = input("Please enter your password: ")
+					      if a == pquery3:
+						      break
+					      if a != pquery3:
+						      print("Passwords do not match.  Please reset your password.")
+				      if pquery3 != pquery2:
+					      pquery3 = input("Please re-enter your new password: ")
+					      if pquery3 == pquery2:
+						      break
+				while pquery1 == "ya":
+				      pquery2 = input("Please enter your new password: ")
+				      pquery3 = input("Please re-enter your new password: ")
+				      if pquery3 == pquery2:
+					      a = input("Please enter your password: ")
+					      if a == pquery3:
+						      break
+					      if a != pquery3:
+						      print("Passwords do not match.  Please reset your password.")
+				      if pquery3 != pquery2:
+					      pquery3 = input("Please re-enter your new password: ")
+					      if pquery3 == pquery2:
+						      break
+				while pquery1 == "Ya":
+				      pquery2 = input("Please enter your new password: ")
+				      pquery3 = input("Please re-enter your new password: ")
+				      if pquery3 == pquery2:
+					      a = input("Please enter your password: ")
+					      if a == pquery3:
+						      break
+					      if a != pquery3:
+						      print("Passwords do not match.  Please reset your password.")
+				      if pquery3 != pquery2:
+					      pquery3 = input("Please re-enter your new password: ")
+					      if pquery3 == pquery2:
+						      break
+				while pquery1 == "yes.":
+				      pquery2 = input("Please enter your new password: ")
+				      pquery3 = input("Please re-enter your new password: ")
+				      if pquery3 == pquery2:
+					      a = input("Please enter your password: ")
+					      if a == pquery3:
+						      break
+					      if a != pquery3:
+						      print("Passwords do not match.  Please reset your password.")
+				      if pquery3 != pquery2:
+					      pquery3 = input("Please re-enter your new password: ")
+					      if pquery3 == pquery2:
+						      break
+				while pquery1 == "Yes.":
+				      pquery2 = input("Please enter your new password: ")
+				      pquery3 = input("Please re-enter your new password: ")
+				      if pquery3 == pquery2:
+					      a = input("Please enter your password: ")
+					      if a == pquery3:
+						      break
+					      if a != pquery3:
+						      print("Passwords do not match.  Please reset your password.")
+				      if pquery3 != pquery2:
+					      pquery3 = input("Please re-enter your new password: ")
+					      if pquery3 == pquery2:
+						      break
+				while pquery1 == "yah":
+				      pquery2 = input("Please enter your new password: ")
+				      pquery3 = input("Please re-enter your new password: ")
+				      if pquery3 == pquery2:
+					      a = input("Please enter your password: ")
+					      if a == pquery3:
+						      break
+					      if a != pquery3:
+						      print("Passwords do not match.  Please reset your password.")
+				      if pquery3 != pquery2:
+					      pquery3 = input("Please re-enter your new password: ")
+					      if pquery3 == pquery2:
+						      break
+				while pquery1 == "Yah":
+				      pquery2 = input("Please enter your new password: ")
+				      pquery3 = input("Please re-enter your new password: ")
+				      if pquery3 == pquery2:
+					      a = input("Please enter your password: ")
+					      if a == pquery3:
+						      break
+					      if a != pquery3:
+						      print("Passwords do not match.  Please reset your password.")
 				      if pquery3 != pquery2:
 					      pquery3 = input("Please re-enter your new password: ")
 					      if pquery3 == pquery2:
