@@ -1,0 +1,96 @@
+"""
+Capricorn - password manager
+Language:  Python
+Created by:  Sean Lyons
+Last updated:  9-5-2020
+"""
+
+#import modules
+import random
+from tkinter import *
+import hashlib
+import json
+import datetime
+
+
+
+#Memory variables
+credentials_memory = {}
+input_memory = []
+
+class credentials_set:
+    def __init__(self,site,user,password):
+        self.site = site
+        self.user = user
+        self.password = password
+
+
+
+
+#Password generation variables
+
+symbol_list = ["!","@","#","$","%","^","&","*",]
+
+def hash(x):
+    a_hash = str(x)
+    a_hash_ser = json.dumps(a_hash, sort_keys=True).encode('utf-8')
+    a_hash_ser_hash = hashlib.sha256(a_hash_ser).hexdigest()
+    print(a_hash_ser_hash)
+
+
+
+#GUI variables
+
+root = Tk()
+root.wm_title("Capricorn - Password Manager")
+root.geometry("400x400")
+root.resizable(False,False)
+
+top_label = Label(root,text="Save Credentials")
+top_label.place(x=10,y=15)
+
+site_entry = Entry(root,)
+site_entry.place(x=80,y=60)
+
+site_label = Label(root,text="Site")
+site_label.place(x=20,y=60)
+
+user_entry = Entry(root)
+user_entry.place(x=80,y=90)
+
+user_label = Label(root,text="User")
+user_label.place(x=20,y=90)
+
+password_entry = Entry(root)
+password_entry.place(x=80,y=120)
+
+password_label = Label(root,text="Password",fg="Blue")
+password_label.place(x=20,y=120)
+
+divider_label = Label(root,text="_ _ _ _ _ _ _ _ _ _")
+divider_label.place(x=0,y=150)
+
+bottom_label = Label(root,text="Generate New Password")
+bottom_label.place(x=10,y=175)
+
+old_password = Entry(root)
+old_password.place(x=80,y=225)
+
+old_label = Label(root,text="Enter Old")
+old_label.place(x=20,y=225)
+
+new_password = Entry(root)
+new_password.place(x=80,y=255)
+
+new_label = Label(root,text="Enter New")
+new_label.place(x=20,y=255)
+
+
+#__main__
+
+
+def main():
+    root.mainloop()
+
+if __name__ == "__main__":
+    main()

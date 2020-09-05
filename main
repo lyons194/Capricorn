@@ -1,8 +1,0 @@
-Updated:  September 5, 2020.
-
-
-def main():
-	print(1)
-
-if __name__ == "__main__":
-	main()
