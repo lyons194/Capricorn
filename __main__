@@ -2,11 +2,11 @@
 Capricorn - password manager
 Language:  Python
 Created by:  Sean Lyons
-Last updated:  9-5-2020
+Last updated:  9-27-2020
 """
 
 #import modules
-import random
+import secrets
 from tkinter import *
 import hashlib
 import json
@@ -16,6 +16,9 @@ import datetime
 
 #Memory variables
 credentials_memory = {}
+site_entry_temp_memory = []
+user_entry_temp_memory = []
+password_entry_temp_memory = []
 input_memory = []
 
 class credentials_set:
@@ -23,6 +26,8 @@ class credentials_set:
         self.site = site
         self.user = user
         self.password = password
+    def create():
+        pass
 
 
 
@@ -31,20 +36,79 @@ class credentials_set:
 
 symbol_list = ["!","@","#","$","%","^","&","*",]
 
+
+
+"""
+09-05-2020:  Change the hash variable names.
+"""
 def hash(x):
     a_hash = str(x)
     a_hash_ser = json.dumps(a_hash, sort_keys=True).encode('utf-8')
     a_hash_ser_hash = hashlib.sha256(a_hash_ser).hexdigest()
     print(a_hash_ser_hash)
 
-
-
 #GUI variables
+
+
+
+
+"""
+
+GUI variables for root Tkinter window.
+
+"""
+
+
+#Secure Start window
+
+
+secure_start = Tk()
+secure_start.wm_title("Capricorn - Log In")
+secure_start.geometry("300x300")
+secure_start.resizable(False,False)
+
+secure_start_user = Entry(secure_start)
+secure_start_user.place(x=50,y=50)
+
+secure_start_password = Entry(secure_start)
+secure_start_password.place(x=50,y=100)
+
+
+
+def secure_start_log_in():
+    try:
+        secure_start_log_in_a = secure_start_user.get()
+        secure_start_log_in_b = secure_start_password.get()
+        print(secure_start_log_in_a,secure_start_log_in_b)
+    except:
+        print("Error:  could not log in to Capricorn.")
+
+
+secure_start_button = Button(secure_start,text="Log In",command=secure_start_log_in)
+secure_start_button.place(x=50,y=150)
+
+
+#Root window
+
 
 root = Tk()
 root.wm_title("Capricorn - Password Manager")
-root.geometry("400x400")
+root.geometry("500x400")
 root.resizable(False,False)
+
+def log_out():
+    root.destroy()
+
+
+#Menu bar
+
+menu = Menu(root)
+root.config(menu=menu)
+
+file_menu = Menu(menu)
+file_menu.add_command(label="Log Out",command=log_out)
+menu.add_cascade(label="File", menu=file_menu)
+
 
 top_label = Label(root,text="Save Credentials")
 top_label.place(x=10,y=15)
@@ -76,21 +140,72 @@ bottom_label.place(x=10,y=175)
 old_password = Entry(root)
 old_password.place(x=80,y=225)
 
-old_label = Label(root,text="Enter Old")
-old_label.place(x=20,y=225)
+old_password_label = Label(root,text="Enter Old")
+old_password_label.place(x=20,y=225)
 
 new_password = Entry(root)
 new_password.place(x=80,y=255)
 
-new_label = Label(root,text="Enter New")
-new_label.place(x=20,y=255)
+new_password_label = Label(root,text="Enter New")
+new_password_label.place(x=20,y=255)
 
 
-#__main__
+def site_entry_get():
+    try:
+        site_entry_get_a = site_entry.get()
+        site_entry_temp_memory.append(site_entry_get_a)
+        print("Success:  Data loaded into memory.")
+        print(site_entry_temp_memory)
+    except:
+        print("Error:  Could not load data.")
+
+def user_entry_get():
+    try:
+        user_entry_get_a = user_entry.get()
+        user_entry_temp_memory.append(user_entry_get_a)
+        print("Success:  Data loaded into memory.")
+        print(user_entry_temp_memory)
+    except:
+        print("Error:  Could not load data.")
+
+def password_entry_get():
+    try:
+        password_entry_a = password_entry.get()
+        password_entry_temp_memory.append(password_entry_a)
+        print("Success:  Data loaded into memory.")
+        print(password_entry_temp_memory)
+    except:
+        print("Error:  Could not load data.")
+
+def change_password():
+    try:
+        change_password_a = old_password.get()
+        change_password_b = new_password.get()
+        print(change_password_a,change_password_b)
+    except:
+        print("Error:  could not retrieve data.")
+
+#GUI buttons.
+
+site_button = Button(root,text="Site",command=site_entry_get)
+site_button.place(x=300,y=60)
+
+user_button = Button(root,text="User",command=user_entry_get)
+user_button.place(x=300,y=90)
+
+password_button = Button(root,text="Password",command=password_entry_get)
+password_button.place(x=300,y=120)
+
+old_new_password_button = Button(root,text="Change Password",command=change_password)
+old_new_password_button.place(x=300,y=300)
 
 
-def main():
-    root.mainloop()
+
+"""
+
+__main__ loop
+
+"""
 
 if __name__ == "__main__":
-    main()
+    secure_start.mainloop()
